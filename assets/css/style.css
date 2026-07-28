@@ -1171,6 +1171,7 @@ html, body, img, figure {
   max-width: 100%; }
 
 html {
+  scroll-behavior: smooth;
   overflow-x: hidden;
   -ms-overflow-style: scrollbar;
   -webkit-font-smoothing: antialiased; }
