@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html lang="en" class="no-js ie8"></html><![endif]-->
+<!--[if IE 9 ]>
+<html lang="en" class="no-js ie9"></html><![endif]-->
+<html class="no-js" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Site Templates / Entertainment / Events">
+    <meta name="author" content="createIT">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png"> -->
+    <title>Homepage</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/confetti.css">
+    <style>
+        .ct-preloader {
+            position: fixed;
+            z-index: 998;
+            width: 100%;
+            width: 100vw;
+            height: 100%;
+            height: 100vh;
+            background-color: #111111;
+            overflow: hidden;
+            display: table;
+            text-align: center;
+        }
+
+        div.ct-preloader__inner {
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            margin: auto;
+            width: 142px;
+            height: 142px;
+        }
+
+        div.ct-preloader__spinner {
+            -moz-animation: rotate 10s infinite linear;
+            -webkit-animation: rotate 10s infinite linear;
+            animation: rotate 10s infinite linear;
+            margin: auto;
+            width: 142px;
+            height: 142px;
+        }
+
+        div.ct-preloader__spinner i {
+            -moz-animation: rotate 3s infinite cubic-bezier(0.09, 0.6, 0.8, 0.03);
+            -webkit-animation: rotate 3s infinite cubic-bezier(0.09, 0.6, 0.8, 0.03);
+            animation: rotate 3s infinite cubic-bezier(0.09, 0.6, 0.8, 0.03);
+            -moz-transform-origin: 50% 100% 0;
+            -webkit-transform-origin: 50% 100% 0;
+            transform-origin: 50% 100% 0;
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+            left: 50%;
+            border: solid 6px transparent;
+            border-bottom: none;
+        }
+
+        div.ct-preloader__spinner i:nth-child(1) {
+            -moz-animation-timing-function: cubic-bezier(0.09, 0.3, 0.12, 0.03);
+            -webkit-animation-timing-function: cubic-bezier(0.09, 0.3, 0.12, 0.03);
+            animation-timing-function: cubic-bezier(0.09, 0.3, 0.12, 0.03);
+            width: 44px;
+            height: 22px;
+            margin-top: -22px;
+            margin-left: -22px;
+            border-color: #2172b8;
+            border-top-left-radius: 36px;
+            border-top-right-radius: 36px;
+        }
+
+        div.ct-preloader__spinner i:nth-child(2) {
+            -moz-animation-timing-function: cubic-bezier(0.09, 0.6, 0.24, 0.03);
+            -webkit-animation-timing-function: cubic-bezier(0.09, 0.6, 0.24, 0.03);
+            animation-timing-function: cubic-bezier(0.09, 0.6, 0.24, 0.03);
+            width: 58px;
+            height: 29px;
+            margin-top: -29px;
+            margin-left: -29px;
+            border-color: #18a39b;
+            border-top-left-radius: 42px;
+            border-top-right-radius: 42px;
+        }
+
+        div.ct-preloader__spinner i:nth-child(3) {
+            -moz-animation-timing-function: cubic-bezier(0.09, 0.9, 0.36, 0.03);
+            -webkit-animation-timing-function: cubic-bezier(0.09, 0.9, 0.36, 0.03);
+            animation-timing-function: cubic-bezier(0.09, 0.9, 0.36, 0.03);
+            width: 72px;
+            height: 36px;
+            margin-top: -36px;
+            margin-left: -36px;
+            border-color: #82c545;
+            border-top-left-radius: 48px;
+            border-top-right-radius: 48px;
+        }
+
+        div.ct-preloader__spinner i:nth-child(4) {
+            -moz-animation-timing-function: cubic-bezier(0.09, 1.2, 0.48, 0.03);
+            -webkit-animation-timing-function: cubic-bezier(0.09, 1.2, 0.48, 0.03);
+            animation-timing-function: cubic-bezier(0.09, 1.2, 0.48, 0.03);
+            width: 86px;
+            height: 43px;
+            margin-top: -43px;
+            margin-left: -43px;
+            border-color: #f8b739;
+            border-top-left-radius: 54px;
+            border-top-right-radius: 54px;
+        }
+
+        div.ct-preloader__spinner i:nth-child(5) {
+            -moz-animation-timing-function: cubic-bezier(0.09, 1.5, 0.6, 0.03);
+            -webkit-animation-timing-function: cubic-bezier(0.09, 1.5, 0.6, 0.03);
+            animation-timing-function: cubic-bezier(0.09, 1.5, 0.6, 0.03);
+            width: 100px;
+            height: 50px;
+            margin-top: -50px;
+            margin-left: -50px;
+            border-color: #f06045;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+        }
+
+        div.ct-preloader__spinner i:nth-child(6) {
+            -moz-animation-timing-function: cubic-bezier(0.09, 1.8, 0.72, 0.03);
+            -webkit-animation-timing-function: cubic-bezier(0.09, 1.8, 0.72, 0.03);
+            animation-timing-function: cubic-bezier(0.09, 1.8, 0.72, 0.03);
+            width: 114px;
+            height: 57px;
+            margin-top: -57px;
+            margin-left: -57px;
+            border-color: #ed2861;
+            border-top-left-radius: 66px;
+            border-top-right-radius: 66px;
+        }
+
+        div.ct-preloader__spinner i:nth-child(7) {
+            -moz-animation-timing-function: cubic-bezier(0.09, 2.1, 0.84, 0.03);
+            -webkit-animation-timing-function: cubic-bezier(0.09, 2.1, 0.84, 0.03);
+            animation-timing-function: cubic-bezier(0.09, 2.1, 0.84, 0.03);
+            width: 128px;
+            height: 64px;
+            margin-top: -64px;
+            margin-left: -64px;
+            border-color: #c12680;
+            border-top-left-radius: 72px;
+            border-top-right-radius: 72px;
+        }
+
+        div.ct-preloader__spinner i.ct-preloader__8 {
+            -moz-animation-timing-function: cubic-bezier(0.09, 2.4, 0.96, 0.03);
+            -webkit-animation-timing-function: cubic-bezier(0.09, 2.4, 0.96, 0.03);
+            animation-timing-function: cubic-bezier(0.09, 2.4, 0.96, 0.03);
+            width: 142px;
+            height: 71px;
+            margin-top: -71px;
+            margin-left: -71px;
+            border-color: #5d3191;
+            border-top-left-radius: 78px;
+            border-top-right-radius: 78px;
+        }
+
+        @-moz-keyframes rotate {
+            to {
+                -moz-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes rotate {
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate {
+            to {
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <script src="assets/js/es5-shim.min.js"></script><![endif]-->
+</head>
+
+<body class="cssAnimate">
+    <!--[if lt IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="ct-preloader">
+        <div class="ct-preloader__inner">
+            <div class="ct-preloader__spinner"><i class="ct-preloader__1"></i><i class="ct-preloader__2"></i><i
+                    class="ct-preloader__3"></i><i class="ct-preloader__4"></i><i class="ct-preloader__5"></i><i
+                    class="ct-preloader__6"></i><i class="ct-preloader__7"></i><i class="ct-preloader__8"></i>
+            </div>
+        </div>
+    </div>
+    <!-- ******************** -->
+    <!-- *** Page Wrapper *** -->
+    <!-- ******************** -->
+    <div id="ct-js-wrapper" class="ct-page-wrapper">
+        <!-- *** Page Navigation *** -->
+        <nav class="ct-menu">
+            <div class="topbar">
+                <div class="topbar__inner">
+                    <address class="ct-address ct-footer__address topbar__address">
+                        <a href="https://maps.app.goo.gl/eQnaMVnvWV3NbYqj8" class="media ct-address__box" target="_blank">
+                            <div class="media-left"><i class="fa fa-map-marker"></i></div>
+                            <div class="media-body"><span class="media-heading">Ctra. d’Esplugues, 08906 L'Hospitalet de Llobregat,
+                                    Barcelona, España</span></div>
+                        </a>
+                        <a href="mailto:thebestpartyhospi1@gmail.com" class="media ct-address__box">
+                            <div class="media-left"><i class="fa fa-envelope"></i></div>
+                            <div class="media-body"><span class="media-heading"><span class="__cf_email__">thebestpartyhospi1@gmail.com</span></span>
+                            </div>
+                        </a>
+                        <a href="tel:+34684352443" class="media ct-address__box">
+                            <div class="media-left"><i class="fa fa-phone"></i></div>
+                            <div class="media-body"><span class="media-heading">684 352 443</span></div>
+                        </a>
+                    </address>
+                </div>
+                <div class="topbar__inner">
+                    <ul class="ct-socials list-inline list-unstyled">
+                        <li class="ct-socials__item ct-socials__item--instagram"><a
+                                href="https://www.instagram.com/thebestparty_hospitalet/" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <!-- <li class="ct-socials__item ct-socials__item--twitter"><a
+                                href="https://twitter.com/createitpl"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="ct-socials__item ct-socials__item--flickr"><a href="#"><i
+                                    class="fa fa-flickr"></i></a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar navbar-default navbar-fixed" style="margin-top: 2rem;display: flex;justify-content: center;">
+                <!-- <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="assets/images/demo-content/logo.png" alt="logo">
+                    </a>
+                </div> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item"><a href="/.">Inicio</a>
+                    </li>
+                    <li class="nav-item"><a href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item"><a href="#horarios">Horarios</a>
+                    <li class="nav-item"><a href="#galeria">Galeria</a>
+                    </li>
+                </ul>
+                <a href="#reserva" class="btn btn-motive pull-right">Reservar Ahora</a>
+            </div>
+        </nav>
+        <!-- *** Page Header ***-->
+        <header data-parallax="30" class="ct-page-header ct-page-header--big">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="ct-page-header__svg">
+                <path d="M0,100 L 100,100 100,0 Z"></path>
+            </svg>
+            <div class="ct-page-header__inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <img style="margin-bottom: 35px;" src="assets/images/logo-the-best-party.svg" alt="logo">
+                            <h1>PASA UN DÍA<b>ÍNCREIBLE!</b></h1>
+                            <h3>Tu espacio ideal para celebraciones inolvidables.</h3>
+                            <a href="#servicios" class="btn btn-default-o" style="margin-top: 5rem;">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- *** Main *** -->
+        <main>
+            <!-- *** Servicios *** -->
+            <section id="servicios" style="background-color: #f5f5f5;">
+                <div class="container">
+                    <h2 class="ct-section-header">Nuestros <b>Servicios</b></h2>
+                    <div class="row">
+                        <div class="col-md-3 col-xs-12">
+                            <a href="#" class="ct-icon-box">
+                                <div class="ct-icon-box__inner">
+                                    <div class="ct-icon-box__icon">
+                                        <div class="inner">
+                                            <img src="assets/images/luz-de-discoteca.svg" />
+                                        </div>
+                                    </div>
+                                    <h3 class="ct-icon-box__header">Zona de Discoteca</h3>
+                                    <p class="ct-icon-box__content">Amplia pista de baile con luces disco y un proyector de pantalla gigante. ¡Para que la fiesta no pare en ningún momento!
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <a href="#" class="ct-icon-box">
+                                <div class="ct-icon-box__inner">
+                                    <div class="ct-icon-box__icon">
+                                        <div class="inner">
+                                            <img src="assets/images/castillo.svg" />
+                                        </div>
+                                    </div>
+                                    <h3 class="ct-icon-box__header">Diversión Infantil</h3>
+                                    <p class="ct-icon-box__content">Los más pequeños lo pasarán en grande de forma segura en nuestro divertido Chiquipark exclusivo para ellos.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <a href="#" class="ct-icon-box">
+                                <div class="ct-icon-box__inner">
+                                    <div class="ct-icon-box__icon">
+                                        <div class="inner">
+                                            <img src="assets/images/personas.svg" />
+                                        </div>
+                                    </div>
+                                    <h3 class="ct-icon-box__header">Aforo para 60 Personas</h3>
+                                    <p class="ct-icon-box__content">Un local espacioso y cómodo, equipado con mesas y sillas suficientes para que todos tus invitados disfruten al máximo.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <a href="#" class="ct-icon-box">
+                                <div class="ct-icon-box__inner">
+                                    <div class="ct-icon-box__icon">
+                                        <div class="inner">
+                                            <img src="assets/images/cafe.svg" />
+                                        </div>
+                                    </div>
+                                    <h3 class="ct-icon-box__header">Área de Office</h3>
+                                    <p class="ct-icon-box__content">Espacio privado para tu catering con neveras, microondas, cafetera expreso y más. Todo listo para servir a tus invitados.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- *** Horarios *** -->
+            <section id="horarios"  class="container">
+                <h2 class="ct-section-header">Horarios <b>Disponibles</b></h2>
+                <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                        <figure class="ct-party-box">
+                            <div class="ct-party-box__inner">
+                                <div class="ct-party-box__media">
+                                    <img src="assets/images/destacada-turno-mañana.png" alt="Balloons and Bubbles" />
+                                </div>
+                                <div class="ct-party-box__content">
+                                    <h3 class="ct-party-box__header" style="font-size: 2.2rem;"><span>Turno de Mañana</span></h3>
+                                    <h5><strong>Horario: 08:00 a 13:00 h.</strong></h5>
+                                    <div class="ct-party-box__price"> <span>200 €</span>
+                                    </div>
+                                    <p>Empieza el día con energía. El horario ideal para desayunos familiares, almuerzos o fiestas infantiles tempranas.</p>
+                                    <a href="#" class="btn btn-motive">Reservar</a>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <figure class="ct-party-box">
+                            <div class="ct-party-box__inner">
+                                <div class="ct-party-box__media">
+                                    <img src="assets/images/destacada-turno-tarde.png" alt="Balloons and Bubbles" />
+                                </div>
+                                <div class="ct-party-box__content">
+                                    <h3 class="ct-party-box__header" style="font-size: 2.2rem;"><span>Turno de Tarde</span></h3>
+                                    <h5><strong>Horario: 14:00 a 19:00 h.</strong></h5>
+                                    <div class="ct-party-box__price"> <span>250 €</span>
+                                    </div>
+                                    <p>Nuestro turno estrella. Perfecto para meriendas, cumpleaños y pasar una tarde espectacular con los tuyos.</p>
+                                    <a href="#" class="btn btn-motive">Reservar</a>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <figure class="ct-party-box">
+                            <div class="ct-party-box__inner">
+                                <div class="ct-party-box__media">
+                                    <img src="assets/images/destacada-turno-noche.png" alt="Balloons and Bubbles" />
+                                </div>
+                                <div class="ct-party-box__content">
+                                    <h3 class="ct-party-box__header" style="font-size: 2.2rem;"><span>Turno de Noche</span></h3>
+                                    <h5><strong>Horario: 20:00 a 01:00 a.m.</strong></h5>
+                                    <div class="ct-party-box__price"> <span>350 €</span>
+                                    </div>
+                                    <p>Celebra a lo grande en un ambiente de discoteca privado. (¿La fiesta se alarga? Puedes extender tu reserva hasta las 03:00 a.m. por solo 50€ cada hora extra).</p>
+                                    <a href="#" class="btn btn-motive">Reservar</a>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <!-- *** Nosotros *** -->
+            <section id="nosotros"  class="ct-u-mask ct-u-display-tablex text-center ct-u-padding-both-40">
+                <div class="inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7 col-md-push-5 ct-u-padding-top-20">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video loop="" controls="" width="640" height="480">
+                                        <source type="video/mp4" src="assets/file.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-md-pull-7">
+                                <h2 class="ct-section-header ct-section-header--white ct-u-margin-top-40">Quiénes
+                                    <b>Somos</b>
+                                </h2>
+                                <h3 style="color: #ffffff;"><strong>Todo lo que necesitas en un solo lugar</strong></h3>
+                                <p data-color="#ffffff" class="ct-u-margin-bottom-30"
+                                    style="color: rgb(255, 255, 255);font-weight: 300 !important;">En The Best Party
+                                    hemos cuidado cada detalle para ofrecerte el salón de eventos más completo de
+                                    L'Hospitalet. Con un aforo de hasta 60 personas y mobiliario incluido, es el lienzo
+                                    en blanco perfecto para tu celebración. Contamos con áreas diferenciadas para
+                                    adultos y niños, incluyendo nuestra zona de discoteca y el Chiquipark.</p><a
+                                    href="#" class="btn btn-default-o">Descargar horarios</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- *** Galeria *** -->
+            <section id="galeria"  class="container">
+                <h2 class="ct-section-header"><b>Galeria</b></h2>
+                <div class="row">
+                    <div class="ct-isotope-container" style="padding: 0 3rem;">
+                        <!-- <div class="ct-isotope-filtering">
+                            <button class="btn btn-gray-o is-active" data-filter="*">Show All
+                            </button>
+                            <button class="btn btn-gray-o" data-filter=".august">August, 2015
+                            </button>
+                            <button class="btn btn-gray-o" data-filter=".july">July, 2015
+                            </button>
+                            <button class="btn btn-gray-o" data-filter=".june">June, 2015
+                            </button>
+                            <button class="btn btn-gray-o" data-filter=".may">May, 2015
+                            </button>
+                        </div> -->
+                        <div
+                            class="ct-isotope-gallery ct-isotope-gallery--lg-4 ct-isotope-gallery--md-3 ct-isotope-gallery--sm-2 ct-isotope-gallery--xs-1">
+                            <figure class="ct-isotope-item isotope-grid-sizer">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal01.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal01.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal02.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal02.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal03.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal03.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal04.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal04.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal05.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal05.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal06.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal06.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal07.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal07.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal08.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal08.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal09.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal09.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal010.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal010.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal011.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal011.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="ct-isotope-item">
+                                <div class="ct-isotope-item__media">
+                                    <img src="assets/images/galeria/gal012.webp" alt="Gallery Item" />
+                                    <div class="ct-isotope-item__hover">
+                                        <div class="ct-isotope-item__inner"><a href="assets/images/galeria/gal012.webp"
+                                                class="btn btn-default-o--type2 btn-sm mfp-image">View Image</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                        <button class="btn btn-motive ct-js-infinite" id="load-more" data-load-name="gallery-"
+                            data-load-page="1">Load More
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- *** Reserva *** -->
+            <section id="reserva"  style="background-color: #f5f5f5; padding-bottom: 8rem;">
+                <div class="inner">
+                    <div class="container">
+                        <h2 class="ct-section-header">¿Listo para celebrar? <b>Reserva ahora</b></h2>
+                        <div class="row">
+                            <form class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="nombreCompleto">Nombre y Apellidos</label>
+                                            <input type="text" class="form-control" id="nombreCompleto" placeholder="Ingrese su nombre completo">
+                                        </div>
+                                    </div><!-- /.col-lg-12 -->
+                                </div><!-- /.row -->
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="telefono">Teléfono</label>
+                                            <input type="number" class="form-control" id="telefono" placeholder="Ingrese su teléfono">
+                                        </div>
+                                    </div><!-- /.col-lg-6 -->
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="email">Correo electrónico</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+                                        </div>
+                                    </div><!-- /.col-lg-6 -->
+                                </div><!-- /.row -->
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="fechaDeseada">FechaDeseada deseada</label>
+                                            <input type="datetime" class="form-control" id="fecha">
+                                        </div>
+                                    </div><!-- /.col-lg-6 -->
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="email">Turno de interés</label>
+                                            <select class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div><!-- /.col-lg-6 -->
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="email">Tipo de evento</label>
+                                            <select class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div><!-- /.col-lg-6 -->
+                                </div><!-- /.row -->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="nombreCompleto">Mensaje/Dudas adicionales</label>
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div><!-- /.col-lg-12 -->
+                                </div><!-- /.row -->
+                                <button type="submit" class="btn btn-default">Reservar</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- *** Page Footer *** -->
+        <footer class="ct-footer" style="padding: 5rem 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        2026 &copy; The Best Party
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <button data-scroll="up" class="ct-btn--scroll-up"><span><i class="fa fa-chevron-up"></i></span>
+    </button>
+    <!-- *** Mobile Navbar *** -->
+    <div class="ct-mobile-navbar">
+        <button class="btn btn-default ct-mobile-navbar__toggle">Menu
+        </button>
+    </div>
+    <!-- *** Mobile Menu *** -->
+    <div class="ct-mobile-menu">
+        <div class="ct-mobile-menu__inner">
+            <div class="ct-mobile-menu__content">
+                <ul class="ct-mobile-menu__nav list-unstyled">
+                    <li class="nav-item"><a href="/.">Inicio</a>
+                    </li>
+                    <li class="nav-item"><a href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item"><a href="#">Horarios</a>
+                    </li>
+                    <li class="nav-item"><a href="#">Galeria</a>
+                    </li>
+                </ul>
+                <div role="separator" class="divider"></div><a href="#" class="btn btn-motive">Reserva Ahora</a>
+            </div>
+            <address class="ct-address ct-footer__address ct-mobile-menu__address"><a
+                    href="https://goo.gl/maps/obRcgtwGH5K2" class="media ct-address__box" target="_blank">
+                    <div class="media-left"><i class="fa fa-map-marker"></i></div>
+                    <div class="media-body"><span class="media-heading">9870 St Vincent Place, Glasgow, DC 45 Fr
+                            45.</span></div>
+                </a><a href="cdn-cgi/l/email-protection.html#82e1edecf6e3e1f6c2effbe1edece4e7f6f6ebace1edef"
+                    class="media ct-address__box">
+                    <div class="media-left"><i class="fa fa-envelope"></i></div>
+                    <div class="media-body"><span class="media-heading"><span class="__cf_email__"
+                                data-cfemail="d4b7bbbaa0b5b7a094b9adb7bbbab2b1a0a0bdfab7bbb9">[email&#160;protected]</span></span>
+                    </div>
+                </a><a href="tel:0123456789" class="media ct-address__box">
+                    <div class="media-left"><i class="fa fa-phone"></i></div>
+                    <div class="media-body"><span class="media-heading">(012) 345-6789</span></div>
+                </a>
+            </address>
+            <ul class="ct-socials list-inline list-unstyled">
+                <li class="ct-socials__item ct-socials__item--instagram"><a href="https://www.instagram.com/thebestparty_hospitalet/" target="_blank"><i
+                            class="fa fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="js-container container-confeti-fondo"></div>
+    <!-- ******************* -->
+    <!-- *** JavaScripts *** -->
+    <!-- ******************* -->
+    <script src="assets/js/confetti.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/confetti.js"></script>
+</body>
+
+</html>
