@@ -7,15 +7,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Site Templates / Entertainment / Events">
+    <meta name="description" content="Salón de eventos en L'Hospitalet, Barcelona. Aforo para 60 personas, zona de discoteca y chiquipark. Cumpleaños, bautizos y fiestas de empresa. ¡Reserva ya!">
     <meta name="author" content="createIT">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
     <meta name="format-detection" content="telephone=no">
-    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/images/favicon.png"> -->
-    <title>Homepage</title>
+    <link rel="canonical" href="https://eventosthebestparty.com/">
+    <link rel="icon" type="image/webp" href="assets/images/favicon.webp">
+    <title>Salón de Eventos The Best Party en Barcelona, España</title>
+    <!-- Open Graph / redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="The Best Party">
+    <meta property="og:url" content="https://eventosthebestparty.com/">
+    <meta property="og:title" content="Salón de Eventos The Best Party en Barcelona, España">
+    <meta property="og:description" content="Salón de eventos en L'Hospitalet, Barcelona. Aforo para 60 personas, zona de discoteca y chiquipark. Cumpleaños, bautizos y fiestas de empresa. ¡Reserva ya!">
+    <meta property="og:image" content="https://eventosthebestparty.com/assets/images/destacada-hero.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Salón de Eventos The Best Party en Barcelona, España">
+    <meta name="twitter:description" content="Salón de eventos en L'Hospitalet, Barcelona. Aforo para 60 personas, zona de discoteca y chiquipark. Cumpleaños, bautizos y fiestas de empresa. ¡Reserva ya!">
+    <meta name="twitter:image" content="https://eventosthebestparty.com/assets/images/destacada-hero.webp">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/confetti.css">
@@ -250,6 +262,95 @@
             color: inherit;
             text-decoration: underline;
         }
+
+        /* Enlace "Ver Video" en la tarjeta de servicios */
+        .ct-video-link {
+            display: inline-block;
+            margin-top: -15px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fc6a9c;
+            text-decoration: none;
+            transition: color 250ms cubic-bezier(0.55, 0, 0.1, 1);
+        }
+
+        .ct-video-link:hover,
+        .ct-video-link:focus {
+            color: #e0447c;
+            text-decoration: underline;
+        }
+
+        .ct-video-link .fa {
+            margin-right: 6px;
+        }
+
+        /* Modal de vídeo */
+        .ct-video-modal[hidden] {
+            display: none;
+        }
+
+        .ct-video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1050;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .ct-video-modal__backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 17, 17, 0.85);
+        }
+
+        .ct-video-modal__dialog {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            background: #111;
+            border-radius: 6px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .ct-video-modal__player {
+            display: block;
+            width: 100%;
+            max-height: 80vh;
+            border-radius: 6px;
+        }
+
+        .ct-video-modal__close {
+            position: absolute;
+            top: -44px;
+            right: 0;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background: #fc6a9c;
+            color: #fff;
+            font-size: 22px;
+            line-height: 36px;
+            cursor: pointer;
+        }
+
+        .ct-video-modal__close:hover,
+        .ct-video-modal__close:focus {
+            background: #e0447c;
+        }
+
+        body.ct-modal-open {
+            overflow: hidden;
+        }
     </style>
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.min.js"></script>
@@ -351,7 +452,7 @@
                     <h2 class="ct-section-header">Nuestros <b>Servicios</b></h2>
                     <div class="row">
                         <div class="col-md-3 col-xs-12">
-                            <a href="#" class="ct-icon-box">
+                            <div class="ct-icon-box">
                                 <div class="ct-icon-box__inner">
                                     <div class="ct-icon-box__icon ct-icon-box__icon--photo">
                                         <div class="inner">
@@ -361,8 +462,11 @@
                                     <h3 class="ct-icon-box__header">Zona de Discoteca</h3>
                                     <p class="ct-icon-box__content">Amplia pista de baile con luces disco y un proyector de pantalla gigante. ¡Para que la fiesta no pare en ningún momento!
                                     </p>
+                                    <a href="assets/video-disco.mp4" class="ct-video-link js-video-open">
+                                        <i class="fa fa-play-circle"></i> Ver Video
+                                    </a>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                         <div class="col-md-3 col-xs-12">
                             <a href="#" class="ct-icon-box">
@@ -787,10 +891,56 @@
     <!-- ******************* -->
     <!-- *** JavaScripts *** -->
     <!-- ******************* -->
+    <!-- Modal de vídeo - Zona de Discoteca -->
+    <div id="video-modal" class="ct-video-modal" role="dialog" aria-modal="true" aria-label="Vídeo de la zona de discoteca" hidden>
+        <div class="ct-video-modal__backdrop" data-video-close></div>
+        <div class="ct-video-modal__dialog">
+            <button type="button" class="ct-video-modal__close" data-video-close aria-label="Cerrar vídeo">&times;</button>
+            <video id="video-disco" class="ct-video-modal__player" controls playsinline preload="none">
+                <source src="assets/video-disco.mp4" type="video/mp4">
+                Tu navegador no admite la reproducción de vídeo.
+            </video>
+        </div>
+    </div>
     <script src="assets/js/confetti.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/confetti.js"></script>
     <script>
+        (function() {
+            var modal = document.getElementById('video-modal');
+            var video = document.getElementById('video-disco');
+            var lastFocused = null;
+
+            function openModal(e) {
+                e.preventDefault();
+                lastFocused = document.activeElement;
+                modal.hidden = false;
+                document.body.classList.add('ct-modal-open');
+                modal.querySelector('.ct-video-modal__close').focus();
+                video.play().catch(function() { /* el navegador puede bloquear el autoplay */ });
+            }
+
+            function closeModal() {
+                video.pause();
+                video.currentTime = 0;
+                modal.hidden = true;
+                document.body.classList.remove('ct-modal-open');
+                if (lastFocused) { lastFocused.focus(); }
+            }
+
+            [].forEach.call(document.querySelectorAll('.js-video-open'), function(link) {
+                link.addEventListener('click', openModal);
+            });
+
+            [].forEach.call(modal.querySelectorAll('[data-video-close]'), function(el) {
+                el.addEventListener('click', closeModal);
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !modal.hidden) { closeModal(); }
+            });
+        })();
+
         document.getElementById('reserva-form').addEventListener('submit', function(e) {
             e.preventDefault();
             var form = this;
