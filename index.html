@@ -284,6 +284,23 @@
             margin-right: 6px;
         }
 
+        /* Vídeo incrustado en la tarjeta de servicios (Opción B) */
+        .ct-icon-box__video {
+            width: 100%;
+            max-width: 240px;
+            margin: 0 auto 20px;
+        }
+
+        .ct-icon-box__player {
+            display: block;
+            width: 100%;
+            height: auto;
+            /* proporción original del vídeo: 478 x 850 (vertical) */
+            aspect-ratio: 478 / 850;
+            border-radius: 8px;
+            background: #111;
+        }
+
         /* Modal de vídeo */
         .ct-video-modal[hidden] {
             display: none;
@@ -451,6 +468,8 @@
                 <div class="container">
                     <h2 class="ct-section-header">Nuestros <b>Servicios</b></h2>
                     <div class="row">
+                        <!-- ===== OPCIÓN A (original, oculta): foto redonda + enlace "Ver Video" que abre el modal =====
+                             Para volver a esta versión: descomenta este bloque y comenta la OPCIÓN B de abajo.
                         <div class="col-md-3 col-xs-12">
                             <div class="ct-icon-box">
                                 <div class="ct-icon-box__inner">
@@ -468,6 +487,26 @@
                                 </div>
                             </div>
                         </div>
+                        ===== FIN OPCIÓN A ===== -->
+
+                        <!-- ===== OPCIÓN B (activa): vídeo incrustado en formato original 478x850 ===== -->
+                        <div class="col-md-3 col-xs-12">
+                            <div class="ct-icon-box">
+                                <div class="ct-icon-box__inner">
+                                    <div class="ct-icon-box__video">
+                                        <video class="ct-icon-box__player" controls playsinline preload="metadata"
+                                            width="478" height="850">
+                                            <source src="assets/video-disco.mp4" type="video/mp4">
+                                            Tu navegador no admite la reproducción de vídeo.
+                                        </video>
+                                    </div>
+                                    <h3 class="ct-icon-box__header">Zona de Discoteca</h3>
+                                    <p class="ct-icon-box__content">Amplia pista de baile con luces disco y un proyector de pantalla gigante. ¡Para que la fiesta no pare en ningún momento!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ===== FIN OPCIÓN B ===== -->
                         <div class="col-md-3 col-xs-12">
                             <a href="#" class="ct-icon-box">
                                 <div class="ct-icon-box__inner">
@@ -505,7 +544,7 @@
                                         </div>
                                     </div>
                                     <h3 class="ct-icon-box__header">Punto de cocina solo para servir y no para preparar</h3>
-                                    <p class="ct-icon-box__content">Consta de 2 neveras, 1 congelador, microondas, cafetera y 1 vitrocerámica de 1 hornilla.
+                                    <p class="ct-icon-box__content">Consta de 2 neveras, 1 congelador, 1 microondas, 1 cafetera y 1 vitrocerámica de 1 hornilla.
                                     </p>
                                 </div>
                             </a>
